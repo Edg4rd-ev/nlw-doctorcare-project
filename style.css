@@ -10,6 +10,8 @@
   --paragraph-color: hsl(210, 9%, 31%);
   --brand-beige: hsla(39, 100%, 97%);
   --brand-green-l: hsl(148, 23%, 89%);
+  --brand-green-l-2: hsla(180, 14%, 97%);
+
 
   --nav-height: 7.2rem;
 
@@ -21,11 +23,15 @@ body{
   text-align: center;
 
   overflow: overlay;
+  background-color: var(--brand-green-l-2);
 }
 .wrapper{
   width: 37.4rem;
   margin-inline: auto;
   padding-inline: 2.4rem;
+}
+html{
+  scroll-behavior: smooth;
 }
 html, body{
   width: 100%;
@@ -34,12 +40,15 @@ html, body{
 ul{
   list-style: none;
 }
-/*===========HEADER======================*/
-header{
-  margin-top: calc(4.1rem + var(--nav-height));
+section{
+  padding-block: 10rem;
 }
-header::before{
-  content: "";
+/*===========HEADER======================*/
+#home {
+  padding-top: calc(4.1rem + var(--nav-height));
+}
+#home::before{
+  content: '';
   width: 100%;
   height: calc(108rem + var(--nav-height));
   display: block;
@@ -50,26 +59,26 @@ header::before{
   left: 0;
   z-index: -1;
 }
-header h4{
+#home h4{
   font-size: 1.4rem;
   color: var(--primary-color);
   line-height: 150%;
   letter-spacing: 0.08em;
   margin-bottom: 1.6rem;
 }
-header h1{
+#home h1{
   font-size: 3.4rem;
   color: var(--headline-color);
   line-height: 130%;
   margin-bottom: 2.4rem;
 }
-header p{
+#home p{
   font-size: 1.8rem;
   color: var(--paragraph-color);
   line-height: 150%;
   margin-bottom: 3.4rem;
 }
-header button{
+#home button{
   background-color: var(--primary-color);
   margin-bottom: 6rem;
 
@@ -91,13 +100,13 @@ header button{
 
   margin-inline: auto;
 }
-header img{
+#home img{
   width: 26.4rem;
   display: block;
   margin-inline: auto;
   object-position: 0 2rem;
 }
-.stats{
+#home .stats{
   width: 32.7rem;
   height: 47rem;
   border: 1px solid var(--brand-green-l);
@@ -112,14 +121,15 @@ header img{
   flex-direction: column;
   justify-content: center;
   gap: 6rem;
+
 }
-.stat p{
+#home .stat p{
   margin: 0;
   color: var(--primary-color);
   font-size: 1.6rem;
   line-height: 150%;
 }
-.stat h3{
+#home .stat h3{
   font-size: 4.8rem;
   line-height: 130%;
   margin-bottom: .4rem;
@@ -133,8 +143,9 @@ nav{
 
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100vw;
+
+  z-index: 100;
 }
 nav .wrapper{
   display: flex;
@@ -143,10 +154,9 @@ nav .wrapper{
 }
 nav.scroll{
   background-color: var(--primary-color);
-  width: 100vw;
-  transition: all;
+  transition: background-color 300ms linear;
 }
-nav.scroll svg:nth-child(1) path{
+nav.scroll .logo path{
   fill: white;
 }
 nav.scroll button path{
@@ -159,7 +169,7 @@ nav button{
 }
 /*===========MENU-EX======================*/
 body.menu-ex > :not(nav){
-  display: none;
+  visibility: hidden;
 }
 body.menu-ex .logo, nav button{
   position: relative;
@@ -186,7 +196,9 @@ body.menu-ex .close-menu{
   opacity: 1;
   visibility: visible;
 }
-
+.menu{
+  transform: translateY(-100%);
+}
 body.menu-ex .menu{
   position: fixed;
   top: 0;
@@ -197,9 +209,8 @@ body.menu-ex .menu{
 
   width: 100vw;
   height: 100vh;
-}
-body.menu-ex nav{
-  position: relative;
+  transition: all 800ms;
+  transform: translateY(0);
 }
 
 .menu ul:nth-child(1){
@@ -241,4 +252,40 @@ body.menu-ex nav{
   align-items: center;
   justify-content: center;
   gap: 3.6rem;
+}
+/*=====SERVICES=============================*/
+#services header h4{
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  line-height: 150%;
+  letter-spacing: 0.08rem;
+  
+  margin-bottom: 1.6rem;
+
+  color: var(--primary-color);
+}
+#services header h2{
+  font-size: 3rem;
+  line-height: 3.9rem;
+  text-align: center;
+  
+  margin-bottom: 6rem;
+}
+#services .cards{
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+#services .card{
+  padding: 2.4rem;
+
+  text-align: left;
+
+  background-color: white;
+
+  border: solid .1rem var(--brand-green-l);
+  border-radius: .6rem;
+}
+#services .card h3{
+  margin-block: 1.6rem;
 }

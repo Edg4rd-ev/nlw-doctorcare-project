@@ -1,5 +1,5 @@
 function onScroll() {
-  if (scrollY === 0) {
+  if (scrollY < 1) {
     navigation.classList.remove('scroll')
   }else{
     navigation.classList.add('scroll')
@@ -11,3 +11,8 @@ function openMenu() {
 function closeMenu() {
   document.body.classList.remove('menu-ex')
 }
+ScrollReveal({
+  origin: 'top',
+  distance: '3rem',
+  duration: '1000',
+}).reveal('#home, #home img, #home .stats, #services, #services .card');
