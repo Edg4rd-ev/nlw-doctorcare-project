@@ -15,4 +15,4 @@ ScrollReveal({
   origin: 'top',
   distance: '3rem',
   duration: '1000',
-}).reveal('#home, #home img, #home .stats, #services, #services .card');
+}).reveal('#home, #home img, #home .stats, #services, #services .card, #about, #about .content, #about .content img');

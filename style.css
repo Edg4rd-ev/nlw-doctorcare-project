@@ -30,6 +30,9 @@ body{
   margin-inline: auto;
   padding-inline: 2.4rem;
 }
+img{
+  width: 100%;
+}
 html{
   scroll-behavior: smooth;
 }
@@ -43,99 +46,34 @@ ul{
 section{
   padding-block: 10rem;
 }
-/*===========HEADER======================*/
-#home {
-  padding-top: calc(4.1rem + var(--nav-height));
-}
-#home::before{
-  content: '';
-  width: 100%;
-  height: calc(108rem + var(--nav-height));
-  display: block;
-  background-color: var(--brand-green-l);
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-#home h4{
-  font-size: 1.4rem;
-  color: var(--primary-color);
-  line-height: 150%;
-  letter-spacing: 0.08em;
-  margin-bottom: 1.6rem;
-}
-#home h1{
+section header h1{
   font-size: 3.4rem;
   color: var(--headline-color);
   line-height: 130%;
   margin-bottom: 2.4rem;
 }
-#home p{
-  font-size: 1.8rem;
+section header h2{
+  font-size: 3rem;
+  line-height: 3.9rem;
+  text-align: center;
+  
+  margin-bottom: 6rem;
+}
+section header h4{
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  line-height: 150%;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.6rem;
+  text-transform: uppercase;
+} 
+section .content p{
+  font-size: 1.6rem;
   color: var(--paragraph-color);
   line-height: 150%;
   margin-bottom: 3.4rem;
 }
-#home button{
-  background-color: var(--primary-color);
-  margin-bottom: 6rem;
-
-  height: 5.2rem;
-  width: 26.3rem;
-
-  border:none;
-  border-radius: 4rem;
-
-  font-size: 1.4rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: hsl(0, 0%, 100%);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.6rem;
-
-  margin-inline: auto;
-}
-#home img{
-  width: 26.4rem;
-  display: block;
-  margin-inline: auto;
-  object-position: 0 2rem;
-}
-#home .stats{
-  width: 32.7rem;
-  height: 47rem;
-  border: 1px solid var(--brand-green-l);
-  border-radius: .6rem;
-
-  margin-inline: auto;
-  padding-block: 4rem;
-
-  background-color: var(--brand-beige);
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 6rem;
-
-}
-#home .stat p{
-  margin: 0;
-  color: var(--primary-color);
-  font-size: 1.6rem;
-  line-height: 150%;
-}
-#home .stat h3{
-  font-size: 4.8rem;
-  line-height: 130%;
-  margin-bottom: .4rem;
-  color: var(--headline-color);
-}
-
+/*===========NAVGATION===================*/
 nav{
   display: flex;
 
@@ -209,7 +147,7 @@ body.menu-ex .menu{
 
   width: 100vw;
   height: 100vh;
-  transition: all 800ms;
+  transition: all 500ms linear;
   transform: translateY(0);
 }
 
@@ -253,23 +191,85 @@ body.menu-ex .menu{
   justify-content: center;
   gap: 3.6rem;
 }
-/*=====SERVICES=============================*/
-#services header h4{
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  line-height: 150%;
-  letter-spacing: 0.08rem;
-  
-  margin-bottom: 1.6rem;
-
-  color: var(--primary-color);
+/*===========HEADER======================*/
+#home {
+  padding-top: calc(4.1rem + var(--nav-height));
 }
-#services header h2{
-  font-size: 3rem;
-  line-height: 3.9rem;
-  text-align: center;
-  
+#home::before{
+  content: '';
+  width: 100%;
+  height: calc(108rem + var(--nav-height));
+  display: block;
+  background-color: var(--brand-green-l);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+#home p{
+  font-size: 1.8rem;
+}
+#home button{
+  background-color: var(--primary-color);
   margin-bottom: 6rem;
+
+  height: 5.2rem;
+  width: 26.3rem;
+
+  border:none;
+  border-radius: 4rem;
+
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 100%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+
+  margin-inline: auto;
+}
+#home img{
+  width: 26.4rem;
+  display: block;
+  margin-inline: auto;
+  object-position: 0 2rem;
+}
+#home .stats{
+  width: 32.7rem;
+  height: 47rem;
+  border: 1px solid var(--brand-green-l);
+  border-radius: .6rem;
+
+  margin-inline: auto;
+  padding-block: 4rem;
+
+  background-color: var(--brand-beige);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6rem;
+
+}
+#home .stat p{
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 1.6rem;
+  line-height: 150%;
+}
+#home .stat h3{
+  font-size: 4.8rem;
+  line-height: 130%;
+  margin-bottom: .4rem;
+  color: var(--headline-color);
+}
+/*=====SERVICES=============================*/
+#services .wrapper{
+  padding: 0;
 }
 #services .cards{
   display: flex;
@@ -288,4 +288,17 @@ body.menu-ex .menu{
 }
 #services .card h3{
   margin-block: 1.6rem;
+}
+/*=====ABOUT=============================*/
+#about{
+  background-color: var(--brand-beige);
+}
+#about .wrapper{
+  padding: 0;
+}
+#about .wrapper h4, #about .wrapper h2, #about .wrapper p{
+  text-align: left;
+}
+#about .wrapper h2{
+  margin-bottom: 2.4rem;
 }
