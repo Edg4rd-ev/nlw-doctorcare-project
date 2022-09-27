@@ -1,3 +1,4 @@
+const navigation = document.getElementById("navigation")
 function onScroll() {
   showNavOnScroll()
   showHomeBtnOnScroll()
